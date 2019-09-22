@@ -432,24 +432,27 @@ public abstract class EntityMinecartAbstract extends EntityVehicle {
             isSlowed = !block.isActive();
         }
 
-        switch (Orientation.byMetadata(block.getRealMeta())) {
-            case ASCENDING_NORTH:
-                motionX -= 0.0078125D;
-                y += 1;
-                break;
-            case ASCENDING_SOUTH:
-                motionX += 0.0078125D;
-                y += 1;
-                break;
-            case ASCENDING_EAST:
-                motionZ += 0.0078125D;
-                y += 1;
-                break;
-            case ASCENDING_WEST:
-                motionZ -= 0.0078125D;
-                y += 1;
-                break;
-        }
+		switch (Orientation.byMetadata(block.getRealMeta())) {
+		case ASCENDING_NORTH:
+			motionX -= 0.0078125D;
+			y += 1;
+			break;
+		case ASCENDING_SOUTH:
+			motionX += 0.0078125D;
+			y += 1;
+			break;
+		case ASCENDING_EAST:
+			motionZ += 0.0078125D;
+			y += 1;
+			break;
+		case ASCENDING_WEST:
+			motionZ -= 0.0078125D;
+			y += 1;
+			break;
+
+		default:
+			break;
+		}
 
         int[][] facing = matrix[block.getRealMeta()];
         double facing1 = (double) (facing[1][0] - facing[0][0]);

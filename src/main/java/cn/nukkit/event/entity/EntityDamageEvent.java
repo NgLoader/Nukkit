@@ -110,20 +110,21 @@ public class EntityDamageEvent extends EntityEvent implements Cancellable {
         this.attackCooldown = attackCooldown;
     }
 
-    public boolean canBeReducedByArmor() {
-        switch (this.cause) {
-            case FIRE_TICK:
-            case SUFFOCATION:
-            case DROWNING:
-            case HUNGER:
-            case FALL:
-            case VOID:
-            case MAGIC:
-            case SUICIDE:
-                return false;
-        }
-        return true;
-    }
+	public boolean canBeReducedByArmor() {
+		switch (this.cause) {
+		case FIRE_TICK:
+		case SUFFOCATION:
+		case DROWNING:
+		case HUNGER:
+		case FALL:
+		case VOID:
+		case MAGIC:
+		case SUICIDE:
+			return false;
+		default:
+			return true;
+		}
+	}
 
     public enum DamageModifier {
         /**

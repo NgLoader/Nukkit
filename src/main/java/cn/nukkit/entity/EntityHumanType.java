@@ -130,12 +130,12 @@ public abstract class EntityHumanType extends EntityCreature implements Inventor
         if (source.getCause() != DamageCause.VOID && source.getCause() != DamageCause.CUSTOM && source.getCause() != DamageCause.MAGIC) {
             int armorPoints = 0;
             int epf = 0;
-            int toughness = 0;
+//            int toughness = 0;
 
             for (Item armor : inventory.getArmorContents()) {
                 armorPoints += armor.getArmorPoints();
                 epf += calculateEnchantmentProtectionFactor(armor, source);
-                //toughness += armor.getToughness();
+//                toughness += armor.getToughness();
             }
 
             if (source.canBeReducedByArmor()) {

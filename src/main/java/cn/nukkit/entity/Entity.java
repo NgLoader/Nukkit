@@ -736,7 +736,7 @@ public abstract class Entity extends Location implements Metadatable {
                 return null;
             }
 
-            for (Constructor constructor : clazz.getConstructors()) {
+            for (Constructor<?> constructor : clazz.getConstructors()) {
                 if (entity != null) {
                     break;
                 }
@@ -2169,11 +2169,11 @@ public abstract class Entity extends Location implements Metadatable {
         }
     }
 
-    public boolean setDataProperty(EntityData data) {
+    public boolean setDataProperty(EntityData<?> data) {
         return setDataProperty(data, true);
     }
 
-    public boolean setDataProperty(EntityData data, boolean send) {
+    public boolean setDataProperty(EntityData<?> data, boolean send) {
         if (!Objects.equals(data, this.getDataProperties().get(data.getId()))) {
             this.getDataProperties().put(data);
             if (send) {
@@ -2188,7 +2188,7 @@ public abstract class Entity extends Location implements Metadatable {
         return this.dataProperties;
     }
 
-    public EntityData getDataProperty(int id) {
+    public EntityData<?> getDataProperty(int id) {
         return this.getDataProperties().get(id);
     }
 

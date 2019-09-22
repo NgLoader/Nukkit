@@ -7,7 +7,6 @@ import com.google.common.base.Preconditions;
 import java.util.Optional;
 import java.util.UUID;
 
-@SuppressWarnings("OptionalUsedAsFieldOrParameterType")
 public class PlayerDataSerializeEvent extends ServerEvent {
     private static HandlerList handlers = new HandlerList();
 
